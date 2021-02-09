@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>WAGEverify</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif+Caption" rel="stylesheet" />
+	<style type="text/css">
+		body,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-family: "PT Sans", sans-serif
+		}
+
+		body {
+			padding: 0 !important;
+			margin: 0 !important;
+			direction: "ltr";
+			font-size: 14px
+		}
+
+		a {
+			color: #428bca;
+			background-color: transparent
+		}
+
+		hr,
+		img {
+			border: 0
+		}
+
+		body,
+		figure {
+			margin: 0
+		}
+
+		html {
+			-ms-text-size-adjust: 100%;
+			-webkit-text-size-adjust: 100%
+		}
+
+		img {
+			vertical-align: middle
+		}
+
+		table {
+			border-collapse: collapse;
+			border-spacing: 0
+		}
+
+		td,
+		th {
+			padding: 0
+		}
+
+		.img-thumbnail,
+		body {
+			background-color: #fff
+		}
+
+		hr,
+		p {
+			margin: 20px 0;
+		}
+
+		*,
+		:after,
+		:before {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box
+		}
+
+		html {
+			font-size: 10px;
+			-webkit-tap-highlight-color: transparent
+		}
+
+		body {
+			line-height: 1.42857;
+			color: #333
+		}
+
+		a:focus,
+		a:hover {
+			color: #23527c;
+			text-decoration: underline
+		}
+
+		p {
+			margin: 0 0 10px
+		}
+
+		pre code,
+		table {
+			background-color: transparent
+		}
+
+		body {
+			background: #e9ecf3;
+		}
+
+		body.page-md {
+			background: #ffffff;
+		}
+
+		html,
+		body {
+			height: 100%;
+		}
+
+		a {
+			text-shadow: none;
+			color: #337ab7;
+		}
+
+		.table {
+			width: 100%;
+			margin-bottom: 20px
+		}
+
+		.table>tbody>tr>td,
+		.table>tbody>tr>th,
+		.table>tfoot>tr>td,
+		.table>tfoot>tr>th,
+		.table>thead>tr>td,
+		.table>thead>tr>th {
+			padding: 8px;
+			line-height: 1.42857;
+			vertical-align: top;
+			border-top: 1px solid #e7ecf1
+		}
+
+		.table>thead>tr>th {
+			vertical-align: bottom;
+			border-bottom: 2px solid #e7ecf1
+		}
+
+		.table>caption+thead>tr:first-child>td,
+		.table>caption+thead>tr:first-child>th,
+		.table>colgroup+thead>tr:first-child>td,
+		.table>colgroup+thead>tr:first-child>th,
+		.table>thead:first-child>tr:first-child>td,
+		.table>thead:first-child>tr:first-child>th {
+			border-top: 0
+		}
+
+		.table>tbody+tbody {
+			border-top: 2px solid #e7ecf1
+		}
+
+		.table .table {
+			background-color: #fff
+		}
+
+		.table-condensed>tbody>tr>td,
+		.table-condensed>tbody>tr>th,
+		.table-condensed>tfoot>tr>td,
+		.table-condensed>tfoot>tr>th,
+		.table-condensed>thead>tr>td,
+		.table-condensed>thead>tr>th {
+			padding: 5px
+		}
+
+		.table-bordered,
+		.table-bordered>tbody>tr>td,
+		.table-bordered>tbody>tr>th,
+		.table-bordered>tfoot>tr>td,
+		.table-bordered>tfoot>tr>th,
+		.table-bordered>thead>tr>td,
+		.table-bordered>thead>tr>th {
+			border: 1px solid #e7ecf1
+		}
+
+		.table-bordered>thead>tr>td,
+		.table-bordered>thead>tr>th {
+			border-bottom-width: 2px
+		}
+
+		.table-striped>tbody>tr:nth-of-type(odd) {
+			background-color: #fbfcfd
+		}
+
+		.table-hover>tbody>tr:hover,
+		.table>tbody>tr.active>td,
+		.table>tbody>tr.active>th,
+		.table>tbody>tr>td.active,
+		.table>tbody>tr>th.active,
+		.table>tfoot>tr.active>td,
+		.table>tfoot>tr.active>th,
+		.table>tfoot>tr>td.active,
+		.table>tfoot>tr>th.active,
+		.table>thead>tr.active>td,
+		.table>thead>tr.active>th,
+		.table>thead>tr>td.active,
+		.table>thead>tr>th.active {
+			background-color: #eef1f5
+		}
+
+		table col[class*=col-] {
+			position: static;
+			float: none;
+			display: table-column
+		}
+
+		table td[class*=col-],
+		table th[class*=col-] {
+			position: static;
+			float: none;
+			display: table-cell
+		}
+
+		.table-responsive {
+			overflow-x: auto;
+			min-height: .01%
+		}
+
+		@media screen and (max-width: 767px) {
+			.table-responsive {
+				width: 100%;
+				margin-bottom: 15px;
+				overflow-y: hidden;
+				-ms-overflow-style: -ms-autohiding-scrollbar;
+				border: 1px solid #e7ecf1
+			}
+
+			.table-responsive>.table {
+				margin-bottom: 0
+			}
+
+			.table-responsive>.table>tbody>tr>td,
+			.table-responsive>.table>tbody>tr>th,
+			.table-responsive>.table>tfoot>tr>td,
+			.table-responsive>.table>tfoot>tr>th,
+			.table-responsive>.table>thead>tr>td,
+			.table-responsive>.table>thead>tr>th {
+				white-space: nowrap
+			}
+
+			.table-responsive>.table-bordered {
+				border: 0
+			}
+
+			.table-responsive>.table-bordered>tbody>tr>td:first-child,
+			.table-responsive>.table-bordered>tbody>tr>th:first-child,
+			.table-responsive>.table-bordered>tfoot>tr>td:first-child,
+			.table-responsive>.table-bordered>tfoot>tr>th:first-child,
+			.table-responsive>.table-bordered>thead>tr>td:first-child,
+			.table-responsive>.table-bordered>thead>tr>th:first-child {
+				border-left: 0
+			}
+
+			.table-responsive>.table-bordered>tbody>tr>td:last-child,
+			.table-responsive>.table-bordered>tbody>tr>th:last-child,
+			.table-responsive>.table-bordered>tfoot>tr>td:last-child,
+			.table-responsive>.table-bordered>tfoot>tr>th:last-child,
+			.table-responsive>.table-bordered>thead>tr>td:last-child,
+			.table-responsive>.table-bordered>thead>tr>th:last-child {
+				border-right: 0
+			}
+
+			.table-responsive>.table-bordered>tbody>tr:last-child>td,
+			.table-responsive>.table-bordered>tbody>tr:last-child>th,
+			.table-responsive>.table-bordered>tfoot>tr:last-child>td,
+			.table-responsive>.table-bordered>tfoot>tr:last-child>th {
+				border-bottom: 0
+			}
+		}
+
+		.TdstyleReport {
+			font-size: 12.5px;
+			font-weight: 600;
+			color: #6c7679;
+			text-transform: uppercase;
+		}
+
+		table {
+			margin-bottom: 0px !important;
+		}
+
+		/*@media print        {        #divblock {page-break-after:always}        }        */
+
+		#divblock,
+		#ctl00_cphMain_pnlEmployee {
+			page-break-after: always;
+		}
+
+		/*.NewLine {page-break-after:always;}*/
+
+		.TitleSeparator {
+			font-size: 12pt;
+			width: 100%;
+			background-color: #d8e2e6;
+			padding: 8px 5px 8px 10px;
+			margin-top: 5px;
+			display: block;
+			color: #3a3434;
+			font-weight: 600;
+		}
+
+		#CustomNote {
+			width: 100%;
+			background-color: #DD5;
+			/*#8C5;*/
+			/*#DDD;*/
+			padding: 4px 5px 4px 5px;
+			margin-top: 5px;
+			margin-bottom: 15px;
+			display: block;
+		}
+
+		.HeaderStyle {
+			background-color: #fff;
+		}
+
+		.RowStyle {
+			background-color: #FFF;
+			/*#88BBFF;*/
+		}
+
+		.AlternatingRowStyle {
+			background-color: #DDD;
+			/*#77AAEE;*/
+		}
+
+		.ReportGrid {
+			width: 840px
+		}
+
+		.ReportGrid td {
+			padding: 3px 3px 3px 3px;
+		}
+
+		.ReportGrid th {
+			font-weight: bold;
+			background-color: #8C5;
+			color: #000;
+			padding: 3px 3px 3px 3px;
+		}
+
+		.IndentedTable {
+			width: 90%;
+			/*margin-left:50px;*/
+		}
+
+		.IndentMain td,
+		th {
+			padding: 5px !important;
+		}
+
+		.IndentMain .table-striped>tbody>tr:nth-child(1)>th {
+			background-color: #e7e9ec !important;
+			color: #333 !important;
+			font-weight: 600 !important;
+		}
+
+		.table-header-style {
+			background-color: #E7E9EC !important;
+			text-align: left
+		}
+
+		.table-header-style-2 {
+			background-color: #D9D9D9 !important;
+		}
+
+		.center-align th,
+		.center-align td {
+			text-align: center;
+		}
+
+		.table>tbody>tr>td {
+			text-align: left !important;
+			border-right: 1px solid #e7ecf1;
+		}
+
+		.table>tbody>tr>td:last-child {
+			border-right: none;
+		}
+	</style>
+</head>
+
+<body class="page-md">
+	<div style="text-align: center;">
+		<img class="logostyle" src="https://www.wageverify.com/images/logo24.png" width="200" /></div>
+
+		<p>&nbsp;</p>
+
+		<div class="IndentMain">[[##report.HeaderAdmin##]] [[##report.DisclaimerAdmin##]] [[##report.Disclaimer##]]
+			[[##report.Header##]] <span class="TitleSeparator">[[##report.Description##]]</span>
+
+			<table border="0" class="IndentedTable">
+				<tbody>
+					<tr>
+						<td style="text-align:left;">
+							<span class="TdstyleReport">Report Tracking Number:</span>&nbsp;<span> [[##report.Id##]]</span>
+						</td>
+						<td style="text-align:right;">
+							<span class="TdstyleReport">Report Creation Date:</span>&nbsp;<span>[[##report.DateReported##]]</span>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td style="text-align:right;">
+							<span class="TdstyleReport">Information Last Updated:</span>&nbsp;<span>[[##payrollHistoryDetail.PayDate##]]</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>&nbsp;</p>
+
+			<div><span class="TitleSeparator">Employer</span>
+
+				<table border="0" class="table table-striped table-hover">
+					<tbody>
+						<tr>
+							<td class="TdstyleReport" show-attr="[[!!Hide Employer Name!!]]">Name:</td>
+							<td show-attr="[[!!Hide Employer Name!!]]"><span>[[##employmentDetails.Name##]]</span></td>
+						</tr>
+						<tr>
+							<td class="TdstyleReport" show-attr="[[!!Hide Employer Headquarters Address!!]]">
+								Headquarters Address:</td>
+							<td show-attr="[[!!Hide Employer Headquarters Address!!]]">[[##employmentDetails.Address##]]
+							</td>
+						</tr>
+						<tr>
+							<td show-attr="[[!!Hide Employer Headquarters Address!!]]">
+								<!--City:-->
+							</td>
+							<td show-attr="[[!!Hide Employer Headquarters Address!!]]">[[##employmentDetails.City##]],
+								[[##employmentDetails.State##]] [[##employmentDetails.ZipCode##]]</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<p>&nbsp;</p>
+
+			<div><span class="TitleSeparator">Employee</span>
+
+				<table border="0" class="table table-striped table-hover">
+					<tbody>
+						<tr>
+							<td class="TdstyleReport" show-attr="[[!!Hide Employee First Name!!]]">First Name:</td>
+							<td show-attr="[[!!Hide Employee First Name!!]]">[[##employmentDetails.FirstName##]]</td>
+							<td class="TdstyleReport" show-attr="[[!!Hide Employee Last Name!!]]">Last Name:</td>
+							<td show-attr="[[!!Hide Employee Last Name!!]]">[[##employmentDetails.LastName##]]</td>
+						</tr>
+						<tr>
+							<td class="TdstyleReport" show-attr="[[!!Hide Employee Hire Date!!]]">Hire Date:</td>
+							<td show-attr="[[!!Hide Employee Hire Date!!]]">[[##employmentDetails.FirstHireDate##]]</td>
+							<td class="TdstyleReport" show-attr="[[!!Hide Employee First Separation Date!!]]">First
+								Separation Date:</td>
+							<td show-attr="[[!!Hide Employee First Separation Date!!]]">
+								[[##employmentDetails.FirstSeparationDate##]]</td>
+						</tr>
+						<tr>
+							<td class="TdstyleReport" show-attr="[[!!Hide Employee Adjusted Hire Date!!]]">Adjusted Hire
+								Date:</td>
+							<td show-attr="[[!!Hide Employee Adjusted Hire Date!!]]">
+								[[##employmentDetails.CurrentHireDate##]]</td>
+							<td class="TdstyleReport" show-attr="[[!!Hide Employee Separation Date!!]]">Separation Date:
+							</td>
+							<td show-attr="[[!!Hide Employee Separation Date!!]]">
+								[[##employmentDetails.CurrentSeparationDate##]]</td>
+						</tr>
+						<tr>
+							<td class="TdstyleReport" show-attr="[[!!Hide Employment Status!!]]">Employment Status:</td>
+							<td show-attr="[[!!Hide Employment Status!!]]">[[##employmentDetails.Status##]]</td>
+							<td class="TdstyleReport" show-attr="[[!!Hide Employment Type!!]]">Employment Type:</td>
+							<td show-attr="[[!!Hide Employment Type!!]]">[[##employmentDetails.Type##]]</td>
+						</tr>
+						<tr>
+							<td class="TdstyleReport" show-ssn="[[@@Hide Employee SSN@@]]">SSN:</td>
+							<td show-ssn="[[@@Hide Employee SSN@@]]">[[##employmentDetails.SSN##]]</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<p>&nbsp;</p>
+
+			<div><span class="TitleSeparator">Job &amp; Wage History</span>
+
+				<div class="table-responsive">
+					<table class="table table-striped table-hover">
+						<thead>
+							<tr class="table-header-style">
+								<th show-attr="[[!!Hide Effective!!]]">Effective</th>
+								<th show-attr="[[!!Hide Title!!]]">Title</th>
+								<th show-attr="[[!!Hide Pay Rate!!]]">Pay Rate</th>
+							</tr>
+						</thead>
+						<tbody>[[@@repeat-start-jobHistoryList
+							<tr>
+								<td show-attr="[[!!Hide Effective!!]]">[[##jobHistoryList.EffectiveDate##]]</td>
+								<td show-attr="[[!!Hide Title!!]]">[[##jobHistoryList.Title##]]</td>
+								<td show-attr="[[!!Hide Pay Rate!!]]">[[##jobHistoryList.PayRateAmount##]]
+									/&nbsp;[[##jobHistoryList.PayRateTypeName##]]</td>
+							</tr>
+							repeat-end-jobHistoryList@@]]
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<p>&nbsp;</p>
+
+			<div><span class="TitleSeparator">Pay Summary</span>
+
+				<div class="table-responsive">
+					<table class="table table-striped table-hover">
+						<thead>
+							<tr class="table-header-style">
+								<th>Pay Year</th>
+								<th show-attr="[[!!Hide Regular_paySummary!!]]">Regular</th>
+								<th show-attr="[[!!Hide Overtime_paySummary!!]]">Overtime</th>
+								<th show-attr="[[!!Hide Bonus_paySummary!!]]">Bonus</th>
+								<th show-attr="[[!!Hide Commission_paySummary!!]]">Commission</th>
+								<th show-attr="[[!!Hide Incentive_paySummary!!]]">Incentive</th>
+								<th show-attr="[[!!Hide Other_paySummary!!]]">Other</th>
+								<th show-attr="[[!!Hide Gross_paySummary!!]]">Gross</th>
+							</tr>
+						</thead>
+						<tbody>[[@@repeat-start-payLineYTD
+							<tr>
+								<td>[[##payLineYTD.Year##]]</td>
+								<td show-attr="[[!!Hide Regular_paySummary!!]]">[[##payLineYTD.RegularYTD##]]</td>
+								<td show-attr="[[!!Hide Overtime_paySummary!!]]">[[##payLineYTD.OvertimeYTD##]]</td>
+								<td show-attr="[[!!Hide Bonus_paySummary!!]]">[[##payLineYTD.BonusYTD##]]</td>
+								<td show-attr="[[!!Hide Commission_paySummary!!]]">[[##payLineYTD.CommissionYTD##]]</td>
+								<td show-attr="[[!!Hide Incentive_paySummary!!]]">[[##payLineYTD.IncentiveYTD##]]</td>
+								<td show-attr="[[!!Hide Other_paySummary!!]]">[[##payLineYTD.OtherYTD##]]</td>
+								<td show-attr="[[!!Hide Gross_paySummary!!]]">[[##payLineYTD.GrossPay##]]</td>
+							</tr>
+							repeat-end-payLineYTD@@]]
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<p>&nbsp;</p>
+
+			<div><span class="TitleSeparator">Pay Detail</span>
+
+				<div class="table-responsive">
+					<table class="table table-striped table-hover">
+						<thead>
+							<tr class="table-header-style">
+								<th>Pay Date</th>
+								<th>Hours</th>
+								<th show-attr="[[!!Hide Regular_payDetail!!]]">Regular</th>
+								<th show-attr="[[!!Hide Overtime_payDetail!!]]">Overtime</th>
+								<th show-attr="[[!!Hide Bonus_payDetail!!]]">Bonus</th>
+								<th show-attr="[[!!Hide Commission_payDetail!!]]">Commission</th>
+								<th show-attr="[[!!Hide Incentive_payDetail!!]]">Incentive</th>
+								<th show-attr="[[!!Hide Other_payDetail!!]]">Other</th>
+								<th show-attr="[[!!Hide Gross_payDetail!!]]">Gross</th>
+							</tr>
+						</thead>
+						<tbody>[[@@repeat-start-payrollHistoryDetail
+							<tr>
+								<td>[[##payrollHistoryDetail.PayDate##]]</td>
+								<td>[[##payrollHistoryDetail.Hours##]]</td>
+								<td show-attr="[[!!Hide Regular_payDetail!!]]">[[##payrollHistoryDetail.Regular##]]</td>
+								<td show-attr="[[!!Hide Overtime_payDetail!!]]">[[##payrollHistoryDetail.Overtime##]]
+								</td>
+								<td show-attr="[[!!Hide Bonus_payDetail!!]]">[[##payrollHistoryDetail.Bonus##]]</td>
+								<td show-attr="[[!!Hide Commission_payDetail!!]]">
+									[[##payrollHistoryDetail.Commission##]]</td>
+								<td show-attr="[[!!Hide Incentive_payDetail!!]]">[[##payrollHistoryDetail.Incentive##]]
+								</td>
+								<td show-attr="[[!!Hide Other_payDetail!!]]">[[##payrollHistoryDetail.Other##]]</td>
+								<td show-attr="[[!!Hide Gross_payDetail!!]]">[[##payrollHistoryDetail.Gross##]]</td>
+							</tr>
+							repeat-end-payrollHistoryDetail@@]]
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<p>&nbsp;</p>
+			[[##report.Footer##]]</div>
+
+		<div>
+			<div class="indent-main">
+				<div class="indent-footer">[[##report.FooterAdmin##]]</div>
+			</div>
+		</div>
+</body>
+
+</html>
